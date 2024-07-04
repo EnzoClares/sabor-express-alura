@@ -1,3 +1,5 @@
+import os # importando uma biblioteca python
+
 print('''
 ░██████╗░█████╗░██████╗░░█████╗░██████╗░  ███████╗██╗░░██╗██████╗░██████╗░███████╗░██████╗░██████╗
 ██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗  ██╔════╝╚██╗██╔╝██╔══██╗██╔══██╗██╔════╝██╔════╝██╔════╝
@@ -17,6 +19,12 @@ opcao_escolhida = int(input('escolha uma opção: '))
 
 print(f'a opção escolhida foi {opcao_escolhida}')
 
+def finalizar_app():
+    os.system('cls')
+    #os.system('clear') --> para MAC
+    print('finalizando aplicativo\n')
+
+
 if opcao_escolhida == 1:
     print('Cadastrar restaurante')
 elif opcao_escolhida == 2:
@@ -24,4 +32,4 @@ elif opcao_escolhida == 2:
 elif opcao_escolhida == 3:
     print('ativar restaurante')
 else:
-    print('encerrando programa')        
+    finalizar_app()        
