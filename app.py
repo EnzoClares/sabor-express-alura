@@ -1,6 +1,8 @@
 import os # importando uma biblioteca python
 
-restaurantes = ['pizza', 'sushi']
+restaurantes = [{'nome':'Praça', 'categoria':'Japonesa', 'ativo': True},
+                {'nome':'Pizza Suprema', 'categoria':'Pizza', 'ativo':False},
+                {'nome':'Cantina', 'categoria':'Italiana', 'ativo':True}]
 
 
 def mostrar_titulo():
@@ -48,7 +50,10 @@ def listar_restaurante():
     limpar_e_por_titulo('listando restaurantes')
     #para cada restaurante na lista de restaurantes
     for restaurante in restaurantes:
-       print(f'.{restaurante}')
+       restaurante_nome = restaurante['nome']
+       restaurante_categoria = restaurante['categoria']
+       restaurante_ativo = restaurante['ativo']
+       print(f'-{restaurante_nome} | {restaurante_categoria} | {restaurante_ativo}')
 
     voltar_ao_menu_principal()
 
