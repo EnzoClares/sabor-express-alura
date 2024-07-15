@@ -28,7 +28,10 @@ def finalizar_app():
 def limpar_e_por_titulo(titulo):
    os.system('cls')
    #os.system('clear') --> para MAC
+   linha = '*' * len(titulo)
+   print(linha)
    print(titulo)
+   print(linha)
    print()
 
 def voltar_ao_menu_principal():
@@ -51,11 +54,12 @@ def cadastrar_novo_restaurante():
 def listar_restaurante():
     limpar_e_por_titulo('listando restaurantes')
     #para cada restaurante na lista de restaurantes
+    print(f'{'Nome do restaurante'.ljust(21)} | {'Categoria'.ljust(20)} | {'Status'}')
     for restaurante in restaurantes:
        restaurante_nome = restaurante['nome']
        restaurante_categoria = restaurante['categoria']
-       restaurante_ativo = restaurante['ativo']
-       print(f'-{restaurante_nome} | {restaurante_categoria} | {restaurante_ativo}')
+       restaurante_ativo = 'ativo' if restaurante['ativo'] else 'desativado' 
+       print(f'-{restaurante_nome.ljust(20)} | {restaurante_categoria.ljust(20)} | {restaurante_ativo}')
 
     voltar_ao_menu_principal()
 
